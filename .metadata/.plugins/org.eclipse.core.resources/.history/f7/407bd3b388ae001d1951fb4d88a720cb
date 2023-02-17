@@ -42,21 +42,6 @@ public class cuenta
 		}
 		
 		public void setAgencia(int agencia){
-			if(agencia>0) {
 			this.agencia = agencia;
-			}
-			else {
-				System.out.println("No estan permitidos los 0");
-			}
-			
-			
-		}
-		
-		public int getAgencia() {
-			return agencia;
-		}
-		
-		public void setTitular(cliente titular) {
-			this.titular = titular;
 		}
 }

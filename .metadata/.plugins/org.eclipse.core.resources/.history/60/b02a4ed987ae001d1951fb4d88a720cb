@@ -1,0 +1,11 @@
+package proyecto_bytebank;
+
+public class pruebaAcceso {
+	public static void main(String[] args) {
+		cuenta cuenta = new cuenta();
+		
+		cuenta.retirar(300);
+		
+		System.out.println(cuenta.obtenerSaldo());
+	}
+}

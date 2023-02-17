@@ -1,0 +1,9 @@
+package proyecto_bytebank;
+
+public class cliente {
+
+	String documento;
+	String telefono;
+	String sexo;
+}
+
