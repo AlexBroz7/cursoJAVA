@@ -1,0 +1,9 @@
+package proyecto_bytebank;
+
+public class metodos {
+		public static void main(String[] args) {
+			cuenta cuentaAlex = new cuenta();
+			cuentaAlex.saldo = 1000;
+			cuentaAlex.depositar(valorDepositado);
+		}
+}
