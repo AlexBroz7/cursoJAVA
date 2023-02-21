@@ -2,18 +2,18 @@ package proyecto_bytebank;
 
 public class metodos {
 		public static void main(String[] args) {
-			cuenta cuentaAlex = new cuenta();
+			Cuenta cuentaAlex = new Cuenta(0, 0);
 			cuentaAlex.saldo = 1000;
-			cuentaAlex.depositar(500);
+			cuentaAlex.deposita(500);
 			
 			System.out.println(cuentaAlex.saldo);
 		
-			cuentaAlex.retirar(100);
+			cuentaAlex.saca(100);
 			System.out.println(cuentaAlex.saldo );
 			
-			cuenta miCuenta = new cuenta();
-			miCuenta.depositar(1000);
-			miCuenta.transferir(400, cuentaAlex);
+			Cuenta miCuenta = new Cuenta(0, 0);
+			miCuenta.deposita(1000);
+			miCuenta.transfiere(400, cuentaAlex);
 			
 			System.out.println(miCuenta.saldo);
 			System.out.println(cuentaAlex.saldo);

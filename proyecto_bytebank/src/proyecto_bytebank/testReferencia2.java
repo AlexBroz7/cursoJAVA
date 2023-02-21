@@ -3,12 +3,12 @@ package proyecto_bytebank;
 public class testReferencia2 {
 
 		public static void main(String[] args) {
-			cliente diego = new cliente();
+			Cliente diego = new Cliente();
 			diego.nombre = "Diego";
 			diego.documento = "3193872192";
 			diego.telefono = "5540618100";
 			
-			cuenta cuentaDeDiego = new cuenta();
+			Cuenta cuentaDeDiego = new Cuenta(0, 0);
 				cuentaDeDiego.agencia =1;
 				cuentaDeDiego.titular = diego;
 				

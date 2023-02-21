@@ -1,62 +1,78 @@
 package proyecto_bytebank;
+public class Cuenta {
 
-public class cuenta 
+    double saldo;
+    int agencia = 1;
+    private int numero;
+    private Cliente titular = new Cliente();
 
-{
-	private double saldo;
-	private int agencia;
-	private int numero;
-	cliente titular;
+    private static int total;
 
+    public Cuenta( int agencia, int numero) {
+        this.agencia = agencia;
+        this.numero = numero;
+        System.out.println("Estoy creando una cuenta " + this.numero);
 
-	
-	void depositar(double valorDepositado){
-		this.saldo += valorDepositado;
-	}
-	
-	public boolean retirar(double valorRetiro) {
-		if(this.saldo >= valorRetiro) {
-			this.saldo = this.saldo - valorRetiro;
-			return true;
-		}
-		else {
-			return false;		
-		}
-	}
-		
-		public boolean transferir(double valorTransferir, cuenta cuenta) {
-				if(this.saldo <= this.saldo) {
-					
-				this.saldo -=  valorTransferir;
-				cuenta.depositar(valorTransferir);
-				return true;
-					}
-				else {
-				return false; 	
-				}
-				
-	}
-		
-		public double getSaldo(){
-			return this.saldo;
-		}
-		
-		public void setAgencia(int agencia){
-			if(agencia>0) {
-			this.agencia = agencia;
-			}
-			else {
-				System.out.println("No estan permitidos los 0");
-			}
-			
-			
-		}
-		
-		public int getAgencia() {
-			return agencia;
-		}
-		
-		public void setTitular(cliente titular) {
-			this.titular = titular;
-		}
+        Cuenta.total ++;
+    }
+
+    public void deposita(double valor) {
+        this.saldo = this.saldo + valor;
+    }
+
+    public boolean saca(double valor) {
+        if(this.saldo >= valor) {
+            this.saldo -= valor;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean transfiere(double valor, Cuenta destino) {
+        if(this.saldo >= valor) {
+            this.saldo -= valor;
+            destino.deposita(valor);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(int agencia) {
+        if (agencia > 0) {
+            this.agencia = agencia;
+        }
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        if (numero > 0) {
+            this.numero = numero;
+        }
+    }
+
+    public Cliente getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
+
+    public static int getTotal() {
+        return Cuenta.total;
+    }
+
 }

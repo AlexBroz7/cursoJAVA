@@ -1,7 +1,0 @@
-package proyecto_bytebank;
-
-public class crearCuenta {
-	public static void main(String[] args) {
-		new cuenta();
-	}
-}
